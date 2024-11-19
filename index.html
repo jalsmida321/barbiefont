@@ -3,141 +3,565 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Discover everything about Barbie fonts - from the iconic logo typography to modern interpretations. Learn about the history, usage, and impact of Barbie typography in design.">
-    <title>Barbie Font Collection | The Ultimate Guide to Barbie Typography</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Discover the iconic Barbie font - From its history to modern applications. Create beautiful text with our Barbie font generator. Learn about the evolution of Barbie typography and its impact on design.">
+    <meta name="keywords" content="Barbie font, Barbie typography, Barbie logo font, Barbie font generator, Barbie pink font, Dollie Script, custom Barbie text">
+    <title>Barbie Font - The Complete Guide to Barbie Typography | BarbieFont.art</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        @font-face {
+            font-family: 'BarbieFont';
+            src: url('fonts/barbie.woff2') format('woff2'),
+                 url('fonts/barbie.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+
+        :root {
+            --barbie-pink: #FF69B4;
+            --barbie-dark-pink: #FF1493;
+            --barbie-light-pink: #FFB6C1;
+            --background: #ffffff;
+            --text-primary: #333333;
+            --text-secondary: #666666;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-primary);
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navigation */
+        .nav-wrapper {
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .logo img {
+            height: 40px;
+        }
+
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            background: linear-gradient(45deg, var(--barbie-pink), var(--barbie-dark-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-primary);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--barbie-pink);
+        }
+
+        .language-selector {
+            position: relative;
+            margin-left: 2rem;
+        }
+
+        .language-selector select {
+            padding: 0.5rem;
+            border: 1px solid var(--barbie-light-pink);
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--barbie-pink), var(--barbie-dark-pink));
+            color: white;
+            padding: 150px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80h-80z" fill="none" stroke="white" stroke-width="1" opacity="0.1"/></svg>') repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            text-align: left;
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 4rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero .art-domain {
+            display: inline-block;
+            background: white;
+            color: var(--barbie-dark-pink);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: bold;
+            margin-top: 1rem;
+        }
+
+        .hero-visual {
+            flex: 1;
+            position: relative;
+        }
+
+        .floating-letters {
+            position: absolute;
+            font-size: 4rem;
+            color: rgba(255,255,255,0.9);
+            animation: float 3s ease-in-out infinite;
+            font-family: 'BarbieFont', cursive;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+            transform-origin: center;
+        }
+
+        .floating-letters:nth-child(1) { animation-delay: 0s; }
+        .floating-letters:nth-child(2) { animation-delay: 0.5s; }
+        .floating-letters:nth-child(3) { animation-delay: 1s; }
+        .floating-letters:nth-child(4) { animation-delay: 1.5s; }
+        .floating-letters:nth-child(5) { animation-delay: 2s; }
+
+        @keyframes float {
+            0%, 100% { 
+                transform: translateY(0) rotate(-5deg); 
+            }
+            50% { 
+                transform: translateY(-20px) rotate(5deg); 
+            }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--barbie-pink);
+            margin-bottom: 15px;
+        }
+
+        /* History Section */
+        .history {
+            padding: 80px 0;
+        }
+
+        .timeline {
+            margin-top: 40px;
+            position: relative;
+        }
+
+        .timeline-item {
+            margin-bottom: 30px;
+            padding-left: 30px;
+            border-left: 2px solid var(--barbie-pink);
+        }
+
+        .timeline-item h3 {
+            color: var(--barbie-pink);
+            margin-bottom: 10px;
+        }
+
+        /* Font Showcase */
+        .font-showcase {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .font-examples {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .font-example {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .font-preview {
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--barbie-pink);
+        }
+
+        /* Generator Section */
+        .generator {
+            padding: 80px 0;
+            background: #fff;
+        }
+
+        .generator-container {
+            position: relative;
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+
+        .generator iframe {
+            width: 100%;
+            height: 600px;
+            border: none;
+            transition: height 0.3s ease;
+        }
+
+        @media screen and (min-width: 1200px) {
+            .generator iframe {
+                height: 800px;
+            }
+        }
+
+        @media screen and (min-width: 1600px) {
+            .generator iframe {
+                height: 900px;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+            .generator iframe {
+                height: 700px;
+            }
+        }
+
+        /* Usage Section */
+        .usage {
+            padding: 80px 0;
+            background: #f9f9f9;
+        }
+
+        .usage-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .usage-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* FAQ Section */
+        .faq {
+            padding: 80px 0;
+        }
+
+        .faq-item {
+            margin-bottom: 20px;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .faq-item h3 {
+            color: var(--barbie-pink);
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--text-primary);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+
+        /* Common Styles */
+        section h2 {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            color: var(--text-secondary);
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .features-grid,
+            .font-examples,
+            .usage-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header class="hero">
-        <nav>
-            <div class="logo">BarbieFont</div>
+    <div class="nav-wrapper">
+        <nav class="container">
+            <div class="logo">
+                <img src="/logo.svg" alt="Barbie Font Logo">
+                <span class="logo-text">BarbieFont.art</span>
+            </div>
             <div class="nav-links">
-                <a href="#about">About</a>
+                <a href="#features">Features</a>
                 <a href="#history">History</a>
-                <a href="#collection">Collection</a>
-                <a href="#contact">Contact</a>
-                <a href="/generator.html" class="cta-button">Try Font Generator</a>
+                <a href="#generator">Generator</a>
+                <a href="#usage">Usage</a>
+                <a href="#faq">FAQ</a>
+                <div class="language-selector">
+                    <select>
+                        <option value="en">🌐 EN</option>
+                        <option value="zh">中文</option>
+                        <option value="es">Español</option>
+                        <option value="fr">Français</option>
+                        <option value="de">Deutsch</option>
+                    </select>
+                </div>
             </div>
         </nav>
-        <div class="hero-content">
-            <h1>Discover the Magic of Barbie Fonts</h1>
-            <p>Explore the iconic typography that shaped generations of design</p>
-            <a href="/generator.html" class="cta-button">Try Our Font Generator</a>
-        </div>
-    </header>
-    <!-- Rest of the landing page content remains the same -->
-    <!-- ... -->
+    </div>
 
-    <main>
-        <section id="about" class="section">
-            <h2>About Barbie Fonts</h2>
-            <div class="content-wrapper">
-                <p>Barbie fonts represent more than just typography; they embody the essence of fashion, creativity, and empowerment that the Barbie brand has championed since 1959. These distinctive typefaces combine elegance with playfulness, creating a unique visual language that has become synonymous with style and imagination.</p>
-                <p>The Barbie font collection encompasses various styles, from the iconic script used in the logo to modern interpretations that capture the brand's evolution. Each font tells a story of design innovation and cultural influence, making them perfect for projects that require a touch of sophistication and fun.</p>
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>Where Typography<br>Meets Art</h1>
+                <p>Transform your text into stunning Barbie-inspired designs. Experience the perfect blend of nostalgia and modern aesthetics.</p>
+                <div class="art-domain">Try Barbie Font</div>
             </div>
-        </section>
+            <div class="hero-visual">
+                <span class="floating-letters" style="top: 10%; left: 10%; font-size: 5rem;">B</span>
+                <span class="floating-letters" style="top: 35%; left: 25%; font-size: 4.5rem;">A</span>
+                <span class="floating-letters" style="top: 55%; left: 45%; font-size: 4.8rem;">R</span>
+                <span class="floating-letters" style="top: 25%; left: 65%; font-size: 4.6rem;">B</span>
+                <span class="floating-letters" style="top: 45%; left: 80%; font-size: 5.2rem;">IE</span>
+            </div>
+        </div>
+    </section>
 
-        <section id="history" class="section pink-section">
-            <h2>The Evolution of Barbie Typography</h2>
+    <section class="features">
+        <div class="container">
+            <h2>Why Choose Barbie Font?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h3>Iconic Design</h3>
+                    <p>The Barbie font represents over 60 years of design evolution, embodying both sophistication and playfulness in its unique typography.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Versatile Usage</h3>
+                    <p>Perfect for creating eye-catching designs, from social media posts to party invitations, the Barbie font adds a touch of glamour to any project.</p>
+                </div>
+                <div class="feature-card">
+                    <h3>Brand Recognition</h3>
+                    <p>Leverage the power of one of the world's most recognized brands with typography that instantly connects with audiences.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="history">
+        <div class="container">
+            <h2>The Evolution of Barbie Font</h2>
+            <p>Since its inception in 1959, the Barbie font has undergone several transformations, each reflecting the design trends and cultural shifts of its era.</p>
             <div class="timeline">
                 <div class="timeline-item">
-                    <h3>1959</h3>
-                    <p>The original Barbie logo featured a delicate script font in soft pink, establishing the brand's sophisticated image. This pioneering design set the foundation for future typography evolution.</p>
+                    <h3>1959: The Original Script</h3>
+                    <p>The original Barbie logo featured a delicate script font in soft pink, establishing the brand's sophisticated image and setting the foundation for future typography evolution.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>1975</h3>
+                    <h3>1975: Bold Evolution</h3>
                     <p>A significant redesign introduced bold sans-serif elements, reflecting the changing fashion landscape and women's movement of the era.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>1991</h3>
+                    <h3>1991: Modern Refinement</h3>
                     <p>The typography evolved to incorporate more playful elements while maintaining its signature elegance, adapting to contemporary design trends.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>1999</h3>
+                    <h3>1999: Digital Age</h3>
                     <p>A modern refresh brought new energy to the Barbie font, balancing tradition with innovation in digital age typography.</p>
                 </div>
                 <div class="timeline-item">
-                    <h3>Present</h3>
+                    <h3>Present Day</h3>
                     <p>Today's Barbie font combines classic script elements with modern design sensibilities, embodying both nostalgia and contemporary style.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="collection" class="section">
-            <h2>Font Collection</h2>
-            <div class="font-grid">
-                <div class="font-card">
-                    <h3>Classic Barbie Script</h3>
-                    <p>The iconic cursive style that defined generations of Barbie branding, featuring elegant curves and playful flourishes.</p>
+    <section class="font-showcase">
+        <div class="container">
+            <h2>Popular Barbie Font Styles</h2>
+            <p>While the official Barbie font is custom-designed and protected, several similar typefaces capture its essence:</p>
+            <div class="font-examples">
+                <div class="font-example">
+                    <div class="font-preview">Dollie Script</div>
+                    <p>A playful script font that captures the essence of the Barbie brand with its elegant curves and feminine style.</p>
                 </div>
-                <div class="font-card">
-                    <h3>Dollie Script</h3>
-                    <p>A popular alternative that captures the essence of the Barbie aesthetic while offering unique creative possibilities.</p>
-                </div>
-                <div class="font-card">
-                    <h3>Barbie Medium</h3>
+                <div class="font-example">
+                    <div class="font-preview">Barbie Medium</div>
                     <p>A versatile typeface that balances readability with style, perfect for modern design applications.</p>
                 </div>
-                <div class="font-card">
-                    <h3>Brush Script Std</h3>
+                <div class="font-example">
+                    <div class="font-preview">Brush Script</div>
                     <p>A dynamic script font that echoes the energy and movement of the Barbie brand's visual identity.</p>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features" class="section pink-section">
-            <h2>Why Choose Barbie Fonts?</h2>
-            <div class="features-grid">
-                <div class="feature">
-                    <h3>Iconic Design</h3>
-                    <p>Leverage the recognition and appeal of one of the world's most beloved brands.</p>
-                </div>
-                <div class="feature">
-                    <h3>Versatility</h3>
-                    <p>Perfect for various applications, from digital media to print materials.</p>
-                </div>
-                <div class="feature">
-                    <h3>Brand Recognition</h3>
-                    <p>Connect with audiences through familiar and beloved typography.</p>
-                </div>
-                <div class="feature">
-                    <h3>Modern Appeal</h3>
-                    <p>Stay current with contemporary design trends while honoring classic elements.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="section">
-            <h2>Get in Touch</h2>
-            <div class="contact-content">
-                <p>Interested in learning more about Barbie fonts? Have questions about licensing or usage? We'd love to hear from you!</p>
-                <a href="mailto:info@barbiefont.art" class="cta-button">Contact Us</a>
-            </div>
-        </section>
-    </main>
-
-    <footer>
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>BarbieFonts</h4>
-                <p>Celebrating the iconic typography of a legendary brand.</p>
-            </div>
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <a href="#about">About</a>
-                <a href="#history">History</a>
-                <a href="#collection">Collection</a>
-            </div>
-            <div class="footer-section">
-                <h4>Contact</h4>
-                <p>Email: support@barbiefont.art</p>
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>Create with Barbie Font</h2>
+            <p>Transform your text into beautiful Barbie-inspired typography with our easy-to-use generator.</p>
+            <div class="generator-container">
+                <iframe src="https://barbiefont.art/generator.html" width="100%" loading="lazy" frameborder="0" allow="clipboard-write"></iframe>
             </div>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2024 BarbieFonts. All rights reserved.</p>
+    </section>
+
+    <section class="usage">
+        <div class="container">
+            <h2>How to Use Barbie Font</h2>
+            <div class="usage-grid">
+                <div class="usage-card">
+                    <h3>Social Media</h3>
+                    <p>Create eye-catching social media posts and stories that capture attention with the iconic Barbie font style.</p>
+                </div>
+                <div class="usage-card">
+                    <h3>Party Decorations</h3>
+                    <p>Design beautiful party invitations, banners, and decorations for themed events and celebrations.</p>
+                </div>
+                <div class="usage-card">
+                    <h3>Digital Content</h3>
+                    <p>Enhance your digital content with Barbie typography for blogs, websites, and online presentations.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq">
+        <div class="container">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <h3>What is the official Barbie font?</h3>
+                <p>The official Barbie font is a custom-designed typeface owned by Mattel. While it's not available for public use, several similar fonts capture its essence and style.</p>
+            </div>
+            <div class="faq-item">
+                <h3>Can I use Barbie font commercially?</h3>
+                <p>The official Barbie font is protected by trademark. However, our generator and similar fonts are available for personal use, with commercial licenses available for some alternatives.</p>
+            </div>
+            <div class="faq-item">
+                <h3>What makes Barbie font special?</h3>
+                <p>The Barbie font combines elegance with playfulness, featuring distinctive curves and a feminine style that has become iconic in design history.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 BarbieFont.art - Your source for Barbie-inspired typography</p>
         </div>
     </footer>
 
+    <script>
+        // FAQ Interaction
+        document.querySelectorAll('.faq-item h3').forEach(item => {
+            item.addEventListener('click', () => {
+                const content = item.nextElementSibling;
+                content.style.display = content.style.display === 'none' ? 'block' : 'none';
+            });
+        });
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>

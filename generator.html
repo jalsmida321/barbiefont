@@ -3,21 +3,404 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Barbie Font Generator | Create Beautiful Typography</title>
+    <title>Barbie Font Generator</title>
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
-    <script type="module" src="/src/main.jsx"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
 </head>
-<body>
-    <nav>
-        <div class="logo">
-            <a href="index.html">BarbieFonts</a>
-        </div>
-        <div class="nav-links">
-            <a href="index.html">Home</a>
-            <a href="index.html#about">About</a>
-            <a href="index.html#collection">Collection</a>
-        </div>
-    </nav>
-    <div id="root"></div>
+<body class="bg-pink-50">
+    <div class="container mx-auto px-4 py-8 max-w-6xl">
+        <header class="text-center mb-12">
+            <h1 class="text-5xl font-bold text-pink-500 mb-4 font-playfair">Barbie Font Generator</h1>
+            <p class="text-gray-600 text-lg">Create beautiful text with iconic Barbie-style fonts</p>
+        </header>
+
+        <main class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+            <!-- Font Preview Panel -->
+            <div class="lg:col-span-9 bg-white rounded-2xl shadow-xl p-8">
+                <div class="font-preview-section space-y-6">
+                    <!-- Text Input -->
+                    <div class="input-area">
+                        <textarea id="input-text" 
+                                class="w-full p-4 text-2xl border-2 border-pink-200 rounded-xl focus:border-pink-500 focus:ring-2 focus:ring-pink-200 transition-all"
+                                placeholder="Type your text here..." 
+                                maxlength="200">Barbie Font</textarea>
+                    </div>
+
+                    <!-- Font Preview Grid -->
+                    <div class="font-preview-grid grid gap-6">
+                        <!-- 预览卡片会通过 JavaScript 动态生成 -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Controls Panel -->
+            <div class="lg:col-span-3 space-y-6">
+                <!-- Text Controls -->
+                <div class="bg-white rounded-xl shadow-lg p-6 space-y-4">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Customize</h3>
+                    
+                    <!-- Font Size -->
+                    <div class="control-group">
+                        <label class="block text-gray-600 mb-2">Size</label>
+                        <input type="range" id="font-size" min="12" max="72" value="32" 
+                               class="w-full h-2 bg-pink-200 rounded-lg appearance-none cursor-pointer">
+                        <div class="flex justify-between text-sm text-gray-500 mt-1">
+                            <span>12px</span>
+                            <span id="size-display">32px</span>
+                            <span>72px</span>
+                        </div>
+                    </div>
+
+                    <!-- Text Color -->
+                    <div class="control-group">
+                        <label class="block text-gray-600 mb-2">Text Color</label>
+                        <div class="flex items-center space-x-4">
+                            <input type="color" id="text-color" value="#FF69B4" 
+                                   class="w-10 h-10 rounded cursor-pointer">
+                            <div class="color-presets grid grid-cols-5 gap-2">
+                                <button class="color-preset w-8 h-8 rounded-full" style="background: #FF69B4" data-color="#FF69B4"></button>
+                                <button class="color-preset w-8 h-8 rounded-full" style="background: #FF1493" data-color="#FF1493"></button>
+                                <button class="color-preset w-8 h-8 rounded-full" style="background: #FF85C2" data-color="#FF85C2"></button>
+                                <button class="color-preset w-8 h-8 rounded-full" style="background: #FFB6C1" data-color="#FFB6C1"></button>
+                                <button class="color-preset w-8 h-8 rounded-full" style="background: #FF69B4" data-color="#FF69B4"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Background Color -->
+                    <div class="control-group">
+                        <label class="block text-gray-600 mb-2">Background Color</label>
+                        <div class="flex items-center space-x-4">
+                            <input type="color" id="bg-color" value="#FFFFFF" 
+                                   class="w-10 h-10 rounded cursor-pointer">
+                            <div class="bg-color-presets grid grid-cols-5 gap-2">
+                                <button class="bg-color-preset w-8 h-8 rounded-full" style="background: #FFFFFF" data-color="#FFFFFF"></button>
+                                <button class="bg-color-preset w-8 h-8 rounded-full" style="background: #FFF0F5" data-color="#FFF0F5"></button>
+                                <button class="bg-color-preset w-8 h-8 rounded-full" style="background: #FFE4E1" data-color="#FFE4E1"></button>
+                                <button class="bg-color-preset w-8 h-8 rounded-full" style="background: #FFF5EE" data-color="#FFF5EE"></button>
+                                <button class="bg-color-preset w-8 h-8 rounded-full" style="background: #F8F8FF" data-color="#F8F8FF"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Effects -->
+                    <div class="control-group">
+                        <label class="block text-gray-600 mb-2">Effects</label>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="effect-btn px-3 py-2 bg-pink-100 rounded hover:bg-pink-200 text-sm" data-effect="shadow">Shadow</button>
+                            <button class="effect-btn px-3 py-2 bg-pink-100 rounded hover:bg-pink-200 text-sm" data-effect="outline">Outline</button>
+                            <button class="effect-btn px-3 py-2 bg-pink-100 rounded hover:bg-pink-200 text-sm" data-effect="gradient">Gradient</button>
+                            <button class="effect-btn px-3 py-2 bg-pink-100 rounded hover:bg-pink-200 text-sm" data-effect="glitter">Glitter</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Download Options -->
+                <div class="bg-white rounded-xl shadow-lg p-6">
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Download</h3>
+                    <div class="space-y-4">
+                        <select id="download-format" class="w-full p-2 border border-pink-200 rounded-lg">
+                            <option value="png">PNG Image</option>
+                            <option value="jpeg">JPEG Image</option>
+                            <option value="svg">SVG Vector</option>
+                        </select>
+                        <button id="download-btn" class="w-full bg-pink-500 text-white py-3 rounded-lg hover:bg-pink-600 transition-colors flex items-center justify-center space-x-2">
+                            <span>Download</span>
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // 字体配置
+        const fonts = [
+            // 默认显示的5个字体
+            { 
+                name: 'Barbie Classic', 
+                family: 'Barbie',
+                preview: 'Live your dreams in style!'
+            },
+            { 
+                name: 'Barbie Doll', 
+                family: 'BarbieDoll',
+                preview: 'Live your dreams in style!'
+            },
+            { 
+                name: 'Fabulous Pink', 
+                family: 'FabulousPink',
+                preview: 'Live your dreams in style!'
+            },
+            { 
+                name: 'Dollie Script', 
+                family: 'DollieScript',
+                preview: 'Live your dreams in style!'
+            },
+            { 
+                name: 'Shiny Crystal', 
+                family: 'ShinyCrystal',
+                preview: 'Live your dreams in style!'
+            },
+            // 隐藏的额外字体
+            { 
+                name: 'Barbie Someone', 
+                family: 'BarbieSomeone',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Barbie Display', 
+                family: 'BarbieDisplay',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Barbie Dol', 
+                family: 'BarbieDol',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Bartex', 
+                family: 'Bartex',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Bontex', 
+                family: 'Bontex',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Caneta Script', 
+                family: 'CanetaScript',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Happy Swirly', 
+                family: 'HappySwirly',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Kentaki', 
+                family: 'Kentaki',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Lemonstyle Sweet', 
+                family: 'LemonstyleSweet',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            },
+            { 
+                name: 'Southern Aire', 
+                family: 'SouthernAire',
+                preview: 'Live your dreams in style!',
+                hidden: true
+            }
+        ];
+
+        // 初始化变量
+        let currentFont = fonts[0];
+        let currentSize = 32;
+        let currentColor = '#FF69B4';
+        let currentBgColor = '#FFFFFF';
+        let activeEffects = new Set();
+        let showAllFonts = false;
+
+        // DOM 元素
+        const inputText = document.getElementById('input-text');
+        const fontSizeInput = document.getElementById('font-size');
+        const sizeDisplay = document.getElementById('size-display');
+        const textColorInput = document.getElementById('text-color');
+        const bgColorInput = document.getElementById('bg-color');
+        const downloadFormat = document.getElementById('download-format');
+        const downloadButton = document.getElementById('download-btn');
+
+        // 生成字体预览网格
+        function generateFontPreviews() {
+            const grid = document.querySelector('.font-preview-grid');
+            grid.innerHTML = '';
+
+            fonts.forEach((font, index) => {
+                if (font.hidden && !showAllFonts) return;
+
+                const preview = document.createElement('div');
+                preview.className = 'font-preview-card p-6 rounded-xl hover:shadow-lg transition-shadow';
+                preview.style.backgroundColor = currentBgColor;
+                preview.innerHTML = `
+                    <div class="flex justify-between items-center mb-3">
+                        <h4 class="text-gray-700 font-medium">${font.name}</h4>
+                        <button class="select-font-btn px-3 py-1 text-sm bg-pink-100 rounded hover:bg-pink-200" 
+                                data-font-index="${index}">Select</button>
+                    </div>
+                    <div class="preview-text text-2xl" style="font-family: ${font.family}; color: ${currentColor}; font-size: ${currentSize}px">
+                        ${inputText.value || font.preview}
+                    </div>
+                `;
+                grid.appendChild(preview);
+            });
+
+            // 添加"显示更多字体"按钮
+            const showMoreBtn = document.createElement('div');
+            showMoreBtn.className = 'text-center mt-6';
+            showMoreBtn.innerHTML = `
+                <button id="toggle-fonts" class="px-6 py-2 bg-pink-100 rounded-full hover:bg-pink-200 transition-colors">
+                    ${showAllFonts ? 'Show Less Fonts' : 'Show More Fonts'}
+                </button>
+            `;
+            grid.appendChild(showMoreBtn);
+
+            // 添加字体选择事件监听器
+            document.querySelectorAll('.select-font-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const fontIndex = parseInt(btn.dataset.fontIndex);
+                    currentFont = fonts[fontIndex];
+                    updateAllPreviews();
+                });
+            });
+
+            // 添加显示更多字体的事件监听器
+            document.getElementById('toggle-fonts').addEventListener('click', () => {
+                showAllFonts = !showAllFonts;
+                generateFontPreviews();
+            });
+        }
+
+        // 更新所有预览
+        function updateAllPreviews() {
+            const previewText = inputText.value || currentFont.preview;
+            document.querySelectorAll('.preview-text').forEach(preview => {
+                preview.textContent = previewText;
+                preview.style.color = currentColor;
+                preview.style.fontSize = `${currentSize}px`;
+            });
+
+            // 更新背景色
+            document.querySelectorAll('.font-preview-card').forEach(card => {
+                card.style.backgroundColor = currentBgColor;
+            });
+
+            // 应用特效
+            applyEffects();
+        }
+
+        // 应用特效
+        function applyEffects() {
+            document.querySelectorAll('.preview-text').forEach(preview => {
+                // 重置所有特效
+                preview.style.textShadow = 'none';
+                preview.style.webkitTextStroke = 'none';
+                preview.style.background = 'none';
+                preview.style.webkitBackgroundClip = 'none';
+                preview.style.webkitTextFillColor = 'currentColor';
+
+                // 应用激活的特效
+                activeEffects.forEach(effect => {
+                    switch(effect) {
+                        case 'shadow':
+                            preview.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
+                            break;
+                        case 'outline':
+                            preview.style.webkitTextStroke = '1px #FF1493';
+                            break;
+                        case 'gradient':
+                            preview.style.background = 'linear-gradient(45deg, #FF69B4, #FF1493)';
+                            preview.style.webkitBackgroundClip = 'text';
+                            preview.style.webkitTextFillColor = 'transparent';
+                            break;
+                        case 'glitter':
+                            preview.style.background = 'linear-gradient(45deg, #FF69B4, #FF1493, #FF69B4)';
+                            preview.style.backgroundSize = '200% 200%';
+                            preview.style.animation = 'glitter 3s linear infinite';
+                            break;
+                    }
+                });
+            });
+        }
+
+        // 事件监听器
+        inputText.addEventListener('input', updateAllPreviews);
+        
+        fontSizeInput.addEventListener('input', () => {
+            currentSize = fontSizeInput.value;
+            sizeDisplay.textContent = `${currentSize}px`;
+            updateAllPreviews();
+        });
+
+        textColorInput.addEventListener('input', (e) => {
+            currentColor = e.target.value;
+            updateAllPreviews();
+        });
+
+        bgColorInput.addEventListener('input', (e) => {
+            currentBgColor = e.target.value;
+            updateAllPreviews();
+        });
+
+        // 颜色预设按钮事件
+        document.querySelectorAll('.color-preset').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentColor = btn.dataset.color;
+                textColorInput.value = currentColor;
+                updateAllPreviews();
+            });
+        });
+
+        // 背景色预设按钮事件
+        document.querySelectorAll('.bg-color-preset').forEach(btn => {
+            btn.addEventListener('click', () => {
+                currentBgColor = btn.dataset.color;
+                bgColorInput.value = currentBgColor;
+                updateAllPreviews();
+            });
+        });
+
+        // 下载功能
+        async function downloadImage() {
+            const preview = document.querySelector('.font-preview-grid');
+            const canvas = await html2canvas(preview, {
+                scale: 2,
+                backgroundColor: null
+            });
+
+            const format = downloadFormat.value;
+            if (format === 'svg') {
+                const svgData = `
+                    <svg xmlns="http://www.w3.org/2000/svg" width="${canvas.width}" height="${canvas.height}">
+                        <foreignObject width="100%" height="100%">
+                            <div xmlns="http://www.w3.org/1999/xhtml">
+                                ${preview.innerHTML}
+                            </div>
+                        </foreignObject>
+                    </svg>
+                `;
+                const blob = new Blob([svgData], {type: 'image/svg+xml;charset=utf-8'});
+                saveAs(blob, 'barbie-text.svg');
+            } else {
+                const mimeType = format === 'jpeg' ? 'image/jpeg' : 'image/png';
+                canvas.toBlob((blob) => {
+                    saveAs(blob, `barbie-text.${format}`);
+                }, mimeType);
+            }
+        }
+
+        downloadButton.addEventListener('click', downloadImage);
+
+        // 初始化
+        generateFontPreviews();
+        updateAllPreviews();
+    </script>
 </body>
 </html>

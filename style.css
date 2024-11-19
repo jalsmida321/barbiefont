@@ -1,9 +1,197 @@
+/* Font Declarations */
+@font-face {
+    font-family: 'Barbie';
+    src: url('fonts/barbie-font/Barbie-2vvLw.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BarbieDoll';
+    src: url('fonts/barbie-doll-font/BarbieDoll-p7Yqd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'BarbieSomeone';
+    src: url('fonts/barbie-someone-font/BarbieSomeone-51LYV.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'BarbieDisplay';
+    src: url('fonts/barbiedol-display-font/BarbiedolDisplayRegular-e9253.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'BarbieDol';
+    src: url('fonts/barbiedol-font/BarbiedolRegular-1GgE4.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'Bartex';
+    src: url('fonts/bartex-font/Bartex-2Opnd.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'Bontex';
+    src: url('fonts/bontex-font/Bontex-w10d9.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'CanetaScript';
+    src: url('fonts/caneta-script-font/CanetaScriptPersonalUseRegular-RpaBo.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'DollieScript';
+    src: url('fonts/dollie-script-font/DollieScriptPersonalUse-K3P7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'FabulousPink';
+    src: url('fonts/fabulous-pink-font/FabulousPinkDemo-K7LJ7.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'HappySwirly';
+    src: url('fonts/happy-swirly-font/HappySwirly-KVB7l.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'Kentaki';
+    src: url('fonts/kentaki-font/Kentaki-e9eqO.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'LemonstyleSweet';
+    src: url('fonts/lemonstyle-sweet-font/LemonstyleSweetTrial-V4q1B.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+@font-face {
+    font-family: 'ShinyCrystal';
+    src: url('fonts/shiny-crystal-font/ShinyCrystal-Yq3z4.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'SouthernAire';
+    src: url('fonts/southern-aire-font/SouthernAirePersonalUseOnly-Ky9A.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    display: swap;
+}
+
+/* Font Classes */
+.font-barbie {
+    font-family: 'Barbie', sans-serif;
+}
+
+.font-barbie-doll {
+    font-family: 'BarbieDoll', sans-serif;
+}
+
+.font-fabulous-pink {
+    font-family: 'FabulousPink', sans-serif;
+}
+
+.font-dollie-script {
+    font-family: 'DollieScript', sans-serif;
+}
+
+.font-shiny-crystal {
+    font-family: 'ShinyCrystal', sans-serif;
+}
+
+.font-barbie-someone {
+    font-family: 'BarbieSomeone', sans-serif;
+    display: none;
+}
+
+.font-barbie-display {
+    font-family: 'BarbieDisplay', sans-serif;
+    display: none;
+}
+
+.font-barbie-dol {
+    font-family: 'BarbieDol', sans-serif;
+    display: none;
+}
+
+.font-bartex {
+    font-family: 'Bartex', sans-serif;
+    display: none;
+}
+
+.font-bontex {
+    font-family: 'Bontex', sans-serif;
+    display: none;
+}
+
+.font-caneta-script {
+    font-family: 'CanetaScript', sans-serif;
+    display: none;
+}
+
+.font-happy-swirly {
+    font-family: 'HappySwirly', sans-serif;
+    display: none;
+}
+
+.font-kentaki {
+    font-family: 'Kentaki', sans-serif;
+    display: none;
+}
+
+.font-lemonstyle-sweet {
+    font-family: 'LemonstyleSweet', sans-serif;
+    display: none;
+}
+
+.font-southern-aire {
+    font-family: 'SouthernAire', sans-serif;
+    display: none;
+}
+
 :root {
     --barbie-pink: #FF69B4;
     --barbie-light-pink: #FFB6C1;
-    --barbie-dark-pink: #FF1493;
-    --white: #FFFFFF;
-    --gray: #333333;
+    --background: #ffffff;
+    --border-color: #e5e7eb;
+    --text-primary: #111827;
+    --text-secondary: #6b7280;
 }
 
 * {
@@ -14,138 +202,525 @@
 
 body {
     font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    color: var(--gray);
+    background-color: #fafafa;
+    color: var(--text-primary);
+    line-height: 1.5;
 }
 
-h1, h2, h3, h4 {
-    font-family: 'Playfair Display', serif;
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
 }
 
-/* Navigation styles */
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 2rem 10%;
-    background: var(--white);
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    font-family: 'Playfair Display', serif;
-    background: linear-gradient(45deg, var(--barbie-pink), var(--barbie-dark-pink));
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
-    letter-spacing: 1px;
-    transform-origin: left center;
-    animation: logoScale 2s infinite alternate;
-    padding: 10px;
-    position: relative;
-}
-
-.logo::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: linear-gradient(90deg, var(--barbie-pink), var(--barbie-dark-pink));
-    transform: scaleX(0);
-    transform-origin: right;
-    transition: transform 0.3s ease;
-}
-
-.logo:hover::after {
-    transform: scaleX(1);
-    transform-origin: left;
-}
-
-@keyframes logoScale {
-    from {
-        transform: scale(1);
-    }
-    to {
-        transform: scale(1.05);
-    }
-}
-
-.nav-links a {
-    color: var(--gray);
-    text-decoration: none;
-    margin-left: 2rem;
-    font-weight: 500;
-    transition: opacity 0.3s;
-}
-
-.nav-links a:hover {
-    opacity: 0.8;
-}
-
-.nav-links .cta-button {
-    background: var(--barbie-pink);
-    color: var(--white);
-    padding: 0.5rem 1rem;
-    border-radius: 25px;
-}
-
-/* Hero section styles */
-.hero {
-    background: linear-gradient(135deg, var(--barbie-pink), var(--barbie-light-pink));
-    min-height: 100vh;
-    color: var(--white);
-    position: relative;
-}
-
-.hero-content {
+/* Header */
+header {
     text-align: center;
-    padding: 10% 10%;
-}
-
-.hero-content h1 {
-    font-size: 4rem;
-    margin-bottom: 1rem;
-}
-
-.hero-content p {
-    font-size: 1.5rem;
-    opacity: 0.9;
     margin-bottom: 2rem;
 }
 
-.hero-content .cta-button {
-    display: inline-block;
-    background: var(--white);
+h1 {
+    font-size: 2.5rem;
     color: var(--barbie-pink);
-    padding: 1rem 2rem;
-    border-radius: 50px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: transform 0.3s;
+    margin-bottom: 0.5rem;
 }
 
-.hero-content .cta-button:hover {
+.subtitle {
+    color: var(--text-secondary);
+}
+
+/* Generator Section */
+.generator-section {
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    margin-bottom: 2rem;
+}
+
+/* Input Area */
+.input-area {
+    margin-bottom: 1.5rem;
+}
+
+textarea {
+    width: 100%;
+    min-height: 100px;
+    padding: 1rem;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    resize: vertical;
+    transition: border-color 0.2s;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--barbie-pink);
+    box-shadow: 0 0 0 3px rgba(255,105,180,0.2);
+}
+
+/* Controls Panel */
+.controls-panel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.control-group {
+    background: #f9fafb;
+    padding: 1rem;
+    border-radius: 0.5rem;
+}
+
+.control-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.875rem;
+}
+
+/* Size Control */
+.size-control {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.size-btn {
+    width: 30px;
+    height: 30px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.size-btn:hover {
+    background: var(--barbie-light-pink);
+    color: white;
+}
+
+/* Color Picker */
+.color-picker {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    padding: 0;
+    cursor: pointer;
+}
+
+.color-presets {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.color-preset {
+    width: 24px;
+    height: 24px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.color-preset:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Alignment Buttons */
+.align-buttons {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.align-btn {
+    flex: 1;
+    padding: 0.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    background: white;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.align-btn:hover {
+    background: var(--barbie-light-pink);
+    color: white;
+}
+
+.align-btn.active {
+    background-color: var(--barbie-pink) !important;
+    color: white;
+}
+
+/* Preview Section */
+.preview-section {
+    margin-bottom: 1.5rem;
+}
+
+.preview-section h3 {
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.preview-container {
+    background: white;
+    border: 2px solid var(--border-color);
+    border-radius: 0.5rem;
+    padding: 2rem;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    animation: fadeIn 0.5s ease-out;
+}
+
+.preview-text {
+    font-family: 'BarbieFont', cursive;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    min-height: 100px;
+    outline: none;
+}
+
+/* Download Section */
+.download-section {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.format-select select {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 0.25rem;
+    font-size: 0.875rem;
+    background: white;
+}
+
+.download-button {
+    padding: 0.75rem 1.5rem;
+    background: var(--barbie-pink);
+    color: white;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* Font Information */
+.font-info {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.font-info h2 {
+    color: var(--barbie-pink);
+    margin-bottom: 1rem;
+}
+
+.font-info p {
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Responsive Design */
+@media (max-width: 640px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .generator-section {
+        padding: 1rem;
+    }
+
+    .controls-panel {
+        grid-template-columns: 1fr;
+    }
+
+    .download-section {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .download-button {
+        width: 100%;
+    }
+}
+
+@font-face {
+    font-family: 'BarbieFont';
+    src: url('fonts/barbie.woff2') format('woff2'),
+         url('fonts/barbie.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+.barbie-regular {
+    font-family: 'BarbieFont', cursive;
+}
+
+.barbie-script {
+    font-family: 'BarbieFont', cursive;
+    font-style: italic;
+}
+
+.barbie-handwriting {
+    font-family: 'BarbieFont', cursive;
+    font-style: normal;
+    letter-spacing: 1px;
+}
+
+.effect-shadow {
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.effect-outline {
+    -webkit-text-stroke: 1px var(--barbie-dark-pink);
+}
+
+.effect-gradient {
+    background: linear-gradient(45deg, var(--barbie-pink), var(--barbie-dark-pink));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Barbie 字体 */
+@font-face {
+    font-family: 'BarbieRegular';
+    src: url('fonts/barbie.woff2') format('woff2'),
+         url('fonts/barbie.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BarbieScript';
+    src: url('fonts/barbie-script.woff2') format('woff2'),
+         url('fonts/barbie-script.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BarbieSignature';
+    src: url('fonts/barbie-signature.woff2') format('woff2'),
+         url('fonts/barbie-signature.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'BarbieHandwriting';
+    src: url('fonts/barbie-handwriting.woff2') format('woff2'),
+         url('fonts/barbie-handwriting.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/* 预览卡片样式 */
+.font-preview-card {
+    transition: all 0.3s ease;
+}
+
+.font-preview-card:hover {
     transform: translateY(-2px);
 }
 
-/* Rest of the existing styles remain the same */
-/* ... */
+.preview-text {
+    font-size: 32px;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+    padding: 20px;
+    width: 100%;
+    text-align: center;
+    min-height: 100px;
+    color: #FF69B4;
+}
 
+/* 控制按钮样式 */
+.effect-btn.active {
+    background-color: #FF69B4 !important;
+    color: white;
+}
+
+/* 滑块样式 */
+input[type="range"] {
+    -webkit-appearance: none;
+    height: 8px;
+    background: #FFB6C1;
+    border-radius: 4px;
+    background-image: linear-gradient(#FF69B4, #FF69B4);
+    background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background: #FF69B4;
+    cursor: pointer;
+    box-shadow: 0 0 2px 0 #555;
+    transition: background .3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    -webkit-appearance: none;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
+/* 颜色选择器样式 */
+input[type="color"] {
+    -webkit-appearance: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+    padding: 0;
+}
+
+input[type="color"]::-webkit-color-swatch {
+    border: none;
+    border-radius: 8px;
+}
+
+/* 特效动画 */
+@keyframes glitter {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* 响应式调整 */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
+    .preview-text {
+        font-size: 24px;
     }
-    
-    .hero-content h1 {
-        font-size: 3rem;
+
+    .font-preview-grid {
+        grid-template-columns: 1fr;
     }
-    
-    .hero-content p {
-        font-size: 1.2rem;
-    }
+}
+
+/* 工具提示 */
+[data-tooltip] {
+    position: relative;
+}
+
+[data-tooltip]:before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: rgba(0,0,0,0.8);
+    color: white;
+    font-size: 12px;
+    border-radius: 4px;
+    white-space: nowrap;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s ease;
+}
+
+[data-tooltip]:hover:before {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* 下载按钮动画 */
+.download-button {
+    transition: all 0.3s ease;
+}
+
+.download-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+/* 自定义单选框样式 */
+input[type="radio"] {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #FFB6C1;
+    border-radius: 50%;
+    outline: none;
+    cursor: pointer;
+}
+
+input[type="radio"]:checked {
+    background-color: #FF69B4;
+    border-color: #FF69B4;
+    position: relative;
+}
+
+input[type="radio"]:checked::before {
+    content: '';
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: white;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
