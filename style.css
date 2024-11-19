@@ -1,0 +1,116 @@
+:root {
+    --barbie-pink: #FF69B4;
+    --barbie-light-pink: #FFB6C1;
+    --barbie-dark-pink: #FF1493;
+    --white: #FFFFFF;
+    --gray: #333333;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    color: var(--gray);
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+}
+
+/* Navigation styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 2rem 10%;
+    background: var(--white);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo a {
+    font-size: 2rem;
+    font-weight: bold;
+    font-family: 'Playfair Display', serif;
+    color: var(--barbie-pink);
+    text-decoration: none;
+}
+
+.nav-links a {
+    color: var(--gray);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 500;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.nav-links .cta-button {
+    background: var(--barbie-pink);
+    color: var(--white);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+}
+
+/* Hero section styles */
+.hero {
+    background: linear-gradient(135deg, var(--barbie-pink), var(--barbie-light-pink));
+    min-height: 100vh;
+    color: var(--white);
+    position: relative;
+}
+
+.hero-content {
+    text-align: center;
+    padding: 10% 10%;
+}
+
+.hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    opacity: 0.9;
+    margin-bottom: 2rem;
+}
+
+.hero-content .cta-button {
+    display: inline-block;
+    background: var(--white);
+    color: var(--barbie-pink);
+    padding: 1rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: transform 0.3s;
+}
+
+.hero-content .cta-button:hover {
+    transform: translateY(-2px);
+}
+
+/* Rest of the existing styles remain the same */
+/* ... */
+
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+    
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+    
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
