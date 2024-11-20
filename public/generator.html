@@ -9,6 +9,78 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+    <style>
+        /* 字体定义 */
+        @font-face {
+            font-family: 'BarbieFont';
+            src: url('/fonts/barbie-font/Barbie-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'BarbieDoll';
+            src: url('/fonts/barbie-doll-font/BarbieDoll-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'BarbieSomeone';
+            src: url('/fonts/barbie-someone-font/BarbieSomeone-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        
+        @font-face {
+            font-family: 'BarbieDisplay';
+            src: url('/fonts/barbiedol-display-font/BarbiedolDisplay-Yz1Bj.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'DollieScript';
+            src: url('/fonts/dollie-script-font/DollieScript-BWqOd.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'FabulousPink';
+            src: url('/fonts/fabulous-pink-font/FabulousPink-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'HappySwirly';
+            src: url('/fonts/happy-swirly-font/HappySwirly-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'ShinyCrystal';
+            src: url('/fonts/shiny-crystal-font/ShinyCrystal-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'SouthernAire';
+            src: url('/fonts/southern-aire-font/SouthernAire-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'LemonstyleSweet';
+            src: url('/fonts/lemonstyle-sweet-font/LemonstyleSweet-2vvLw.ttf') format('truetype');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
 </head>
 <body class="bg-pink-50">
     <div class="container mx-auto px-4 py-8 max-w-6xl">
@@ -32,6 +104,15 @@
                     <!-- Font Preview Grid -->
                     <div class="font-preview-grid grid gap-6">
                         <!-- 预览卡片会通过 JavaScript 动态生成 -->
+                    </div>
+                    <div class="pagination flex justify-between items-center mt-6">
+                        <button id="prev-page" class="px-4 py-2 bg-pink-100 rounded-lg hover:bg-pink-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                            Prev
+                        </button>
+                        <span class="text-gray-600 text-lg">Page <span id="current-page">1</span> of <span id="total-pages">1</span></span>
+                        <button id="next-page" class="px-4 py-2 bg-pink-100 rounded-lg hover:bg-pink-200 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                            Next
+                        </button>
                     </div>
                 </div>
             </div>
@@ -124,7 +205,7 @@
         const fonts = [
             { 
                 name: 'Barbie', 
-                family: 'Barbie',
+                family: 'BarbieFont',
                 preview: 'Live your dreams in style!',
                 hidden: false
             },
@@ -147,20 +228,47 @@
                 hidden: false
             },
             { 
-                name: 'Barbie Dol', 
-                family: 'BarbieDol',
+                name: 'Dollie Script', 
+                family: 'DollieScript',
+                preview: 'Live your dreams in style!',
+                hidden: false
+            },
+            { 
+                name: 'Fabulous Pink', 
+                family: 'FabulousPink',
+                preview: 'Live your dreams in style!',
+                hidden: false
+            },
+            { 
+                name: 'Happy Swirly', 
+                family: 'HappySwirly',
+                preview: 'Live your dreams in style!',
+                hidden: false
+            },
+            { 
+                name: 'Shiny Crystal', 
+                family: 'ShinyCrystal',
+                preview: 'Live your dreams in style!',
+                hidden: false
+            },
+            { 
+                name: 'Southern Aire', 
+                family: 'SouthernAire',
+                preview: 'Live your dreams in style!',
+                hidden: false
+            },
+            { 
+                name: 'Lemonstyle Sweet', 
+                family: 'LemonstyleSweet',
                 preview: 'Live your dreams in style!',
                 hidden: false
             }
         ];
 
-        // 初始化变量
-        let currentFont = fonts[0];
-        let currentSize = 32;
-        let currentColor = '#FF69B4';
-        let currentBgColor = '#FFFFFF';
-        let activeEffects = new Set();
-        let showAllFonts = false;
+        // 分页配置
+        const FONTS_PER_PAGE = 5;
+        let currentPage = 1;
+        const totalPages = Math.ceil(fonts.length / FONTS_PER_PAGE);
 
         // DOM 元素
         const inputText = document.getElementById('input-text');
@@ -170,144 +278,82 @@
         const bgColorInput = document.getElementById('bg-color');
         const downloadFormat = document.getElementById('download-format');
         const downloadButton = document.getElementById('download-btn');
+        const prevPageBtn = document.getElementById('prev-page');
+        const nextPageBtn = document.getElementById('next-page');
+        const currentPageSpan = document.getElementById('current-page');
+        const totalPagesSpan = document.getElementById('total-pages');
 
-        // 生成字体预览网格
+        // 初始化变量
+        let currentFont = fonts[0];
+        let currentSize = 32;
+        let currentColor = '#FF69B4';
+        let currentBgColor = '#FFFFFF';
+        let activeEffects = new Set();
+
+        // 生成字体预览
         function generateFontPreviews() {
-            const grid = document.querySelector('.font-preview-grid');
-            grid.innerHTML = '';
+            const previewGrid = document.querySelector('.font-preview-grid');
+            previewGrid.innerHTML = ''; // 清空现有预览
 
-            fonts.forEach((font, index) => {
-                if (font.hidden && !showAllFonts) return;
+            const startIndex = (currentPage - 1) * FONTS_PER_PAGE;
+            const endIndex = Math.min(startIndex + FONTS_PER_PAGE, fonts.length);
+            const currentFonts = fonts.slice(startIndex, endIndex);
 
-                const preview = document.createElement('div');
-                preview.className = 'font-preview-card p-6 rounded-xl hover:shadow-lg transition-shadow';
-                preview.style.backgroundColor = currentBgColor;
-                preview.innerHTML = `
-                    <div class="flex justify-between items-center mb-3">
-                        <h4 class="text-gray-700 font-medium">${font.name}</h4>
-                        <button class="select-font-btn px-3 py-1 text-sm bg-pink-100 rounded hover:bg-pink-200" 
-                                data-font-index="${index}">Select</button>
-                    </div>
-                    <div class="preview-text text-2xl" style="font-family: ${font.family}; color: ${currentColor}; font-size: ${currentSize}px">
+            currentFonts.forEach(font => {
+                const previewCard = document.createElement('div');
+                previewCard.className = 'preview-card bg-white p-6 rounded-xl shadow-md hover:shadow-lg transition-shadow';
+                
+                previewCard.innerHTML = `
+                    <div class="font-name text-gray-600 mb-2">${font.name}</div>
+                    <div class="preview-text text-4xl" style="font-family: '${font.family}'; color: ${currentColor}; background-color: ${currentBgColor};">
                         ${inputText.value || font.preview}
                     </div>
+                    <button class="use-font-btn mt-4 px-4 py-2 bg-pink-100 text-pink-600 rounded-lg hover:bg-pink-200 transition-colors w-full"
+                            onclick="selectFont('${font.family}')">
+                        Use This Font
+                    </button>
                 `;
-                grid.appendChild(preview);
+                
+                previewGrid.appendChild(previewCard);
             });
 
-            // 添加"显示更多字体"按钮
-            const showMoreBtn = document.createElement('div');
-            showMoreBtn.className = 'text-center mt-6';
-            showMoreBtn.innerHTML = `
-                <button id="toggle-fonts" class="px-6 py-2 bg-pink-100 rounded-full hover:bg-pink-200 transition-colors">
-                    ${showAllFonts ? 'Show Less Fonts' : 'Show More Fonts'}
-                </button>
-            `;
-            grid.appendChild(showMoreBtn);
+            // 更新分页信息
+            currentPageSpan.textContent = currentPage;
+            totalPagesSpan.textContent = totalPages;
+            
+            // 更新按钮状态
+            prevPageBtn.disabled = currentPage === 1;
+            nextPageBtn.disabled = currentPage === totalPages;
+        }
 
-            // 添加字体选择事件监听器
-            document.querySelectorAll('.select-font-btn').forEach(btn => {
-                btn.addEventListener('click', () => {
-                    const fontIndex = parseInt(btn.dataset.fontIndex);
-                    currentFont = fonts[fontIndex];
-                    updateAllPreviews();
-                });
-            });
-
-            // 添加显示更多字体的事件监听器
-            document.getElementById('toggle-fonts').addEventListener('click', () => {
-                showAllFonts = !showAllFonts;
-                generateFontPreviews();
-            });
+        // 选择字体
+        function selectFont(fontFamily) {
+            currentFont = fonts.find(f => f.family === fontFamily);
+            updateAllPreviews();
         }
 
         // 更新所有预览
         function updateAllPreviews() {
-            const previewText = inputText.value || currentFont.preview;
-            document.querySelectorAll('.preview-text').forEach(preview => {
-                preview.textContent = previewText;
-                preview.style.color = currentColor;
-                preview.style.fontSize = `${currentSize}px`;
-            });
-
-            // 更新背景色
-            document.querySelectorAll('.font-preview-card').forEach(card => {
-                card.style.backgroundColor = currentBgColor;
-            });
-
-            // 应用特效
-            applyEffects();
-        }
-
-        // 应用特效
-        function applyEffects() {
-            document.querySelectorAll('.preview-text').forEach(preview => {
-                // 重置所有特效
-                preview.style.textShadow = 'none';
-                preview.style.webkitTextStroke = 'none';
-                preview.style.background = 'none';
-                preview.style.webkitBackgroundClip = 'none';
-                preview.style.webkitTextFillColor = 'currentColor';
-
-                // 应用激活的特效
-                activeEffects.forEach(effect => {
-                    switch(effect) {
-                        case 'shadow':
-                            preview.style.textShadow = '2px 2px 4px rgba(0,0,0,0.3)';
-                            break;
-                        case 'outline':
-                            preview.style.webkitTextStroke = '1px #FF1493';
-                            break;
-                        case 'gradient':
-                            preview.style.background = 'linear-gradient(45deg, #FF69B4, #FF1493)';
-                            preview.style.webkitBackgroundClip = 'text';
-                            preview.style.webkitTextFillColor = 'transparent';
-                            break;
-                        case 'glitter':
-                            preview.style.background = 'linear-gradient(45deg, #FF69B4, #FF1493, #FF69B4)';
-                            preview.style.backgroundSize = '200% 200%';
-                            preview.style.animation = 'glitter 3s linear infinite';
-                            break;
-                    }
-                });
+            const previewCards = document.querySelectorAll('.preview-card .preview-text');
+            previewCards.forEach(preview => {
+                preview.textContent = inputText.value || preview.closest('.preview-card').querySelector('.preview-text').textContent;
+                applyEffects(preview);
             });
         }
 
-        // 事件监听器
-        inputText.addEventListener('input', updateAllPreviews);
-        
-        fontSizeInput.addEventListener('input', () => {
-            currentSize = fontSizeInput.value;
-            sizeDisplay.textContent = `${currentSize}px`;
-            updateAllPreviews();
+        // 翻页功能
+        prevPageBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                generateFontPreviews();
+            }
         });
 
-        textColorInput.addEventListener('input', (e) => {
-            currentColor = e.target.value;
-            updateAllPreviews();
-        });
-
-        bgColorInput.addEventListener('input', (e) => {
-            currentBgColor = e.target.value;
-            updateAllPreviews();
-        });
-
-        // 颜色预设按钮事件
-        document.querySelectorAll('.color-preset').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentColor = btn.dataset.color;
-                textColorInput.value = currentColor;
-                updateAllPreviews();
-            });
-        });
-
-        // 背景色预设按钮事件
-        document.querySelectorAll('.bg-color-preset').forEach(btn => {
-            btn.addEventListener('click', () => {
-                currentBgColor = btn.dataset.color;
-                bgColorInput.value = currentBgColor;
-                updateAllPreviews();
-            });
+        nextPageBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                generateFontPreviews();
+            }
         });
 
         // 下载功能
