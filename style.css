@@ -1,21 +1,21 @@
 /* Font Declarations */
 @font-face {
     font-family: 'Barbie';
-    src: url('fonts/barbie-font/Barbie-2vvLw.ttf') format('truetype');
+    src: url('../fonts/barbie-font/Barbie-2vvLw.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BarbieDoll';
-    src: url('fonts/barbie-doll-font/BarbieDoll-p7Yqd.ttf') format('truetype');
+    src: url('../fonts/barbie-doll-font/BarbieDoll-p7Yqd.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'BarbieSomeone';
-    src: url('fonts/barbie-someone-font/BarbieSomeone-51LYV.ttf') format('truetype');
+    src: url('../fonts/barbie-someone-font/BarbieSomeone-51LYV.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -23,7 +23,7 @@
 
 @font-face {
     font-family: 'BarbieDisplay';
-    src: url('fonts/barbiedol-display-font/BarbiedolDisplayRegular-e9253.otf') format('opentype');
+    src: url('../fonts/barbiedol-display-font/BarbiedolDisplayRegular-e9253.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -31,7 +31,7 @@
 
 @font-face {
     font-family: 'BarbieDol';
-    src: url('fonts/barbiedol-font/BarbiedolRegular-1GgE4.otf') format('opentype');
+    src: url('../fonts/barbiedol-font/BarbiedolRegular-1GgE4.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -39,7 +39,7 @@
 
 @font-face {
     font-family: 'Bartex';
-    src: url('fonts/bartex-font/Bartex-2Opnd.ttf') format('truetype');
+    src: url('../fonts/bartex-font/Bartex-2Opnd.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -47,7 +47,7 @@
 
 @font-face {
     font-family: 'Bontex';
-    src: url('fonts/bontex-font/Bontex-w10d9.ttf') format('truetype');
+    src: url('../fonts/bontex-font/Bontex-w10d9.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -55,7 +55,7 @@
 
 @font-face {
     font-family: 'CanetaScript';
-    src: url('fonts/caneta-script-font/CanetaScriptPersonalUseRegular-RpaBo.otf') format('opentype');
+    src: url('../fonts/caneta-script-font/CanetaScriptPersonalUseRegular-RpaBo.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -63,21 +63,21 @@
 
 @font-face {
     font-family: 'DollieScript';
-    src: url('fonts/dollie-script-font/DollieScriptPersonalUse-K3P7.ttf') format('truetype');
+    src: url('../fonts/dollie-script-font/DollieScriptPersonalUse-K3P7.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'FabulousPink';
-    src: url('fonts/fabulous-pink-font/FabulousPinkDemo-K7LJ7.ttf') format('truetype');
+    src: url('../fonts/fabulous-pink-font/FabulousPinkDemo-K7LJ7.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'HappySwirly';
-    src: url('fonts/happy-swirly-font/HappySwirly-KVB7l.ttf') format('truetype');
+    src: url('../fonts/happy-swirly-font/HappySwirly-KVB7l.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -85,7 +85,7 @@
 
 @font-face {
     font-family: 'Kentaki';
-    src: url('fonts/kentaki-font/Kentaki-e9eqO.otf') format('opentype');
+    src: url('../fonts/kentaki-font/Kentaki-e9eqO.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -93,7 +93,7 @@
 
 @font-face {
     font-family: 'LemonstyleSweet';
-    src: url('fonts/lemonstyle-sweet-font/LemonstyleSweetTrial-V4q1B.ttf') format('truetype');
+    src: url('../fonts/lemonstyle-sweet-font/LemonstyleSweetTrial-V4q1B.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -101,14 +101,14 @@
 
 @font-face {
     font-family: 'ShinyCrystal';
-    src: url('fonts/shiny-crystal-font/ShinyCrystal-Yq3z4.ttf') format('truetype');
+    src: url('../fonts/shiny-crystal-font/ShinyCrystal-Yq3z4.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'SouthernAire';
-    src: url('fonts/southern-aire-font/SouthernAirePersonalUseOnly-Ky9A.ttf') format('truetype');
+    src: url('../fonts/southern-aire-font/SouthernAirePersonalUseOnly-Ky9A.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     display: swap;
@@ -479,8 +479,8 @@ input[type="color"] {
 
 @font-face {
     font-family: 'BarbieFont';
-    src: url('fonts/barbie.woff2') format('woff2'),
-         url('fonts/barbie.woff') format('woff');
+    src: url('../fonts/barbie.woff2') format('woff2'),
+         url('../fonts/barbie.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -529,8 +529,8 @@ input[type="color"] {
 /* Barbie 字体 */
 @font-face {
     font-family: 'BarbieRegular';
-    src: url('fonts/barbie.woff2') format('woff2'),
-         url('fonts/barbie.woff') format('woff');
+    src: url('../fonts/barbie.woff2') format('woff2'),
+         url('../fonts/barbie.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -538,8 +538,8 @@ input[type="color"] {
 
 @font-face {
     font-family: 'BarbieScript';
-    src: url('fonts/barbie-script.woff2') format('woff2'),
-         url('fonts/barbie-script.woff') format('woff');
+    src: url('../fonts/barbie-script.woff2') format('woff2'),
+         url('../fonts/barbie-script.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -547,8 +547,8 @@ input[type="color"] {
 
 @font-face {
     font-family: 'BarbieSignature';
-    src: url('fonts/barbie-signature.woff2') format('woff2'),
-         url('fonts/barbie-signature.woff') format('woff');
+    src: url('../fonts/barbie-signature.woff2') format('woff2'),
+         url('../fonts/barbie-signature.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
@@ -556,8 +556,8 @@ input[type="color"] {
 
 @font-face {
     font-family: 'BarbieHandwriting';
-    src: url('fonts/barbie-handwriting.woff2') format('woff2'),
-         url('fonts/barbie-handwriting.woff') format('woff');
+    src: url('../fonts/barbie-handwriting.woff2') format('woff2'),
+         url('../fonts/barbie-handwriting.woff') format('woff');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

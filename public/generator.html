@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbie Font Generator</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="../style.css">
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
@@ -122,92 +122,35 @@
     <script>
         // 字体配置
         const fonts = [
-            // 默认显示的5个字体
             { 
-                name: 'Barbie Classic', 
+                name: 'Barbie', 
                 family: 'Barbie',
-                preview: 'Live your dreams in style!'
+                preview: 'Live your dreams in style!',
+                hidden: false
             },
             { 
                 name: 'Barbie Doll', 
                 family: 'BarbieDoll',
-                preview: 'Live your dreams in style!'
+                preview: 'Live your dreams in style!',
+                hidden: false
             },
-            { 
-                name: 'Fabulous Pink', 
-                family: 'FabulousPink',
-                preview: 'Live your dreams in style!'
-            },
-            { 
-                name: 'Dollie Script', 
-                family: 'DollieScript',
-                preview: 'Live your dreams in style!'
-            },
-            { 
-                name: 'Shiny Crystal', 
-                family: 'ShinyCrystal',
-                preview: 'Live your dreams in style!'
-            },
-            // 隐藏的额外字体
             { 
                 name: 'Barbie Someone', 
                 family: 'BarbieSomeone',
                 preview: 'Live your dreams in style!',
-                hidden: true
+                hidden: false
             },
             { 
                 name: 'Barbie Display', 
                 family: 'BarbieDisplay',
                 preview: 'Live your dreams in style!',
-                hidden: true
+                hidden: false
             },
             { 
                 name: 'Barbie Dol', 
                 family: 'BarbieDol',
                 preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Bartex', 
-                family: 'Bartex',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Bontex', 
-                family: 'Bontex',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Caneta Script', 
-                family: 'CanetaScript',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Happy Swirly', 
-                family: 'HappySwirly',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Kentaki', 
-                family: 'Kentaki',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Lemonstyle Sweet', 
-                family: 'LemonstyleSweet',
-                preview: 'Live your dreams in style!',
-                hidden: true
-            },
-            { 
-                name: 'Southern Aire', 
-                family: 'SouthernAire',
-                preview: 'Live your dreams in style!',
-                hidden: true
+                hidden: false
             }
         ];
 
@@ -402,5 +345,16 @@
         generateFontPreviews();
         updateAllPreviews();
     </script>
+    <div style="display:none;">
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-PFVHVBDTPB"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-PFVHVBDTPB');
+    </script>
+    </div>
 </body>
 </html>
