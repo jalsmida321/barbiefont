@@ -557,22 +557,34 @@
     </footer>
 
     <script>
-        // FAQ Interaction
-        document.querySelectorAll('.faq-item h3').forEach(item => {
-            item.addEventListener('click', () => {
-                const content = item.nextElementSibling;
-                content.style.display = content.style.display === 'none' ? 'block' : 'none';
-            });
-        });
-
-        // Smooth Scroll
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+        document.addEventListener('DOMContentLoaded', function() {
+            // 平滑滚动
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        targetElement.scrollIntoView({
+                            behavior: 'smooth'
+                        });
+                    }
                 });
             });
+
+            // 语言选择器
+            const languageSelector = document.querySelector('.language-selector select');
+            if (languageSelector) {
+                languageSelector.addEventListener('change', function() {
+                    const selectedLang = this.value;
+                    const currentPath = window.location.pathname;
+                    if (selectedLang === 'en') {
+                        window.location.href = '/index.html';
+                    } else {
+                        window.location.href = `/${selectedLang}/index.html`;
+                    }
+                });
+            }
         });
     </script>
 <div style="display:none;">
