@@ -133,27 +133,20 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M10 10h80v80h-80z" fill="none" stroke="white" stroke-width="1" opacity="0.1"/></svg>') repeat;
-            opacity: 0.1;
-        }
-
         .hero-content {
             display: flex;
             align-items: center;
             justify-content: space-between;
             gap: 2rem;
+            position: relative;
+            z-index: 2;
         }
 
         .hero-text {
             flex: 1;
             text-align: left;
+            position: relative;
+            z-index: 3;
         }
 
         .hero h1 {
@@ -167,15 +160,26 @@
             display: inline-block;
             background: white;
             color: var(--barbie-dark-pink);
-            padding: 0.5rem 1rem;
+            padding: 1rem 2rem;
             border-radius: 30px;
             font-weight: bold;
             margin-top: 1rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            position: relative;
+            z-index: 3;
+        }
+
+        .hero .art-domain:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
         .hero-visual {
             flex: 1;
             position: relative;
+            min-height: 300px;
+            z-index: 1;
         }
 
         .floating-letters {
@@ -186,6 +190,8 @@
             font-family: 'BarbieFont', cursive;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
             transform-origin: center;
+            pointer-events: none;
+            z-index: 1;
         }
 
         .floating-letters:nth-child(1) { animation-delay: 0s; }
