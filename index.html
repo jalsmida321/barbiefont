@@ -4,8 +4,36 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Create free pink stylish text with our Barbie Font Generator! Supports one-click copy, download, perfect for social media, party decorations, and personalized designs. Try now!">
-    <meta name="keywords" content="Barbie font, Barbie typography, Barbie logo font, Barbie font generator, Barbie pink font, Dollie Script, custom Barbie text">
+    <meta name="keywords" content="Barbie font, Barbie typography, Barbie logo font, Barbie font generator, Barbie pink font, Dollie Script, custom Barbie text, barbie text generator, pink barbie letters, barbie style font">
+    <meta name="author" content="Barbie Font Generator">
+    <meta name="robots" content="index, follow, max-image-preview:large">
+    <meta name="googlebot" content="index, follow">
     <title>Barbie Font Generator - Create Free Pink Stylish Text Online</title>
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://barbiefont.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://barbiefont.com/">
+    <meta property="og:title" content="Barbie Font Generator - Create Free Pink Stylish Text">
+    <meta property="og:description" content="Create beautiful Barbie-style text instantly! Free online tool to generate pink stylish fonts for social media, parties, and creative projects. Copy and paste ready!">
+    <meta property="og:image" content="https://barbiefont.com/public/favicon/favicon-512x512.png">
+    <meta property="og:site_name" content="Barbie Font Generator">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://barbiefont.com/">
+    <meta property="twitter:title" content="Barbie Font Generator - Free Pink Text Styles">
+    <meta property="twitter:description" content="Create stunning Barbie-style text for your social media posts! Free generator with copy-paste functionality. Perfect for Instagram captions and party decorations.">
+    <meta property="twitter:image" content="https://barbiefont.com/public/favicon/favicon-512x512.png">
+    <meta name="twitter:creator" content="@barbiefont">
+    
+    <!-- Additional SEO -->
+    <meta name="apple-mobile-web-app-title" content="Barbie Font">
+    <meta name="application-name" content="Barbie Font Generator">
+    <meta name="msapplication-config" content="/public/favicon/browserconfig.xml">
     
     <!-- Favicon -->
     <link rel="apple-touch-icon" sizes="180x180" href="/public/favicon/apple-touch-icon.png">
@@ -20,6 +48,59 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Barbie Font Generator",
+      "description": "Create free pink stylish text with our Barbie Font Generator! Perfect for social media, party decorations, and personalized designs.",
+      "url": "https://barbiefont.com",
+      "applicationCategory": "DesignApplication",
+      "operatingSystem": "Web",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "featureList": [
+        "Barbie-style text generation",
+        "One-click copy functionality",
+        "Font download option",
+        "Multiple Barbie font styles",
+        "Real-time preview"
+      ],
+      "screenshot": "https://barbiefont.com/public/favicon/favicon-512x512.png",
+      "author": {
+        "@type": "Organization",
+        "name": "Barbie Font Generator"
+      },
+      "keywords": "Barbie font, Barbie typography, Barbie logo font, Barbie font generator, pink text generator"
+    }
+    </script>
+    
+    <!-- PWA Support -->
+    <link rel="manifest" href="/public/manifest.json">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="BarbieFont">
+    <link rel="apple-touch-startup-image" href="/public/favicon/favicon-512x512.png">
+    
+    <!-- Service Worker Registration -->
+    <script>
+      if ('serviceWorker' in navigator) {
+        window.addEventListener('load', () => {
+          navigator.serviceWorker.register('/public/sw.js')
+            .then((registration) => {
+              console.log('SW registered: ', registration);
+            })
+            .catch((registrationError) => {
+              console.log('SW registration failed: ', registrationError);
+            });
+        });
+      }
+    </script>
     <style>
         @font-face {
             font-family: 'BarbieFont';
@@ -434,6 +515,16 @@
         </div>
     </section>
 
+    <section id="generator" class="generator">
+        <div class="container">
+            <h2>Create with Barbie Font</h2>
+            <p>Transform your text into beautiful Barbie-inspired typography with our easy-to-use generator.</p>
+            <div class="generator-container">
+                <iframe src="https://barbiefont.art/generator.html" width="100%" loading="lazy" frameborder="0" allow="clipboard-write"></iframe>
+            </div>
+        </div>
+    </section>
+
     <section id="features" class="features">
         <div class="container">
             <h2>Why Choose Barbie Font?</h2>
@@ -504,15 +595,7 @@
         </div>
     </section>
 
-    <section id="generator" class="generator">
-        <div class="container">
-            <h2>Create with Barbie Font</h2>
-            <p>Transform your text into beautiful Barbie-inspired typography with our easy-to-use generator.</p>
-            <div class="generator-container">
-                <iframe src="https://barbiefont.art/generator.html" width="100%" loading="lazy" frameborder="0" allow="clipboard-write"></iframe>
-            </div>
-        </div>
-    </section>
+    
 
     <section id="usage" class="usage">
         <div class="container">

@@ -1,0 +1,54 @@
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "What is the Barbie Font Generator?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our Barbie Font Generator is a free online tool that creates text in various Barbie-inspired font styles. You can type any text and instantly see it transformed into beautiful pink, cursive, or decorative fonts similar to the iconic Barbie brand aesthetic."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Is the Barbie Font Generator free?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! Our Barbie Font Generator is 100% free to use. There's no registration required, no watermarks, and no usage limits. You can create as much Barbie-style text as you want."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I use these fonts for commercial projects?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Most fonts in our generator are free for personal use. For commercial use, please check the individual license for each font. Some fonts may require attribution or have restrictions on commercial use."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "How accurate are these fonts to the real Barbie font?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Our fonts are inspired by the Barbie aesthetic but are not the official trademarked Barbie font. We've created similar styles that capture the essence of Barbie's playful, feminine, and glamorous look while offering variety and customization options."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Can I download the fonts to my computer?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes! You can download your generated text as image files (PNG format) for use in your projects. This allows you to use the Barbie-style text in any application that supports images."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Does it work on mobile devices?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Yes, our Barbie Font Generator is fully responsive and works perfectly on smartphones, tablets, and desktop computers. You can create Barbie-style text on any device with an internet connection."
+      }
+    }
+  ]
+}

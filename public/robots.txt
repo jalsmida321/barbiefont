@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# 允许所有搜索引擎抓取
+Allow: /fonts/
+Allow: /public/fonts/
+Allow: /generator.html
+Allow: /de/
+Allow: /es/
+Allow: /fr/
+Allow: /zh/
+
+# 禁止抓取敏感目录
+Disallow: /node_modules/
+Disallow: /.git/
+Disallow: /.bolt/
+
+# 网站地图
+Sitemap: https://barbiefont.com/sitemap.xml
+Sitemap: https://barbiefont.com/sitemap-index.xml
